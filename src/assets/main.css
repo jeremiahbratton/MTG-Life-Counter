@@ -1,0 +1,179 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+}
+
+.roundButton {
+  border-radius: 50%;
+  border: 1px solid;
+  width: clamp(8vw, 100px, 31vw);
+  aspect-ratio: 1/1;
+  flex-shrink: 0;
+  font-size: 3rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1);
+  transition: transform 0.4s ease background-color 0.4s ease-in-out;
+
+  &:active {
+    transform: scale(0.95);
+    background-color: black;
+    color: white;
+    transition: transform 0.2s ease-out background-color 0.2s ease-in-out;
+  }
+
+}
+
+.optionsButton {
+  border-radius: 30px;
+  padding: 0.5rem;
+  font-size: 2rem;
+  width: 100px;
+}
+
+.life-total {
+  font-weight: 700;
+  font-size: 4rem;
+  max-width: 92px;
+    overflow: hidden;
+    width: 92px;
+    text-align: center;
+}
+
+.counterBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  width: 100vw;
+  height: 100vh;
+}
+
+.lifeCounter {
+  display: flex;
+  gap: 2em;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 700;
+  padding: 0.5rem;
+  max-width: 100vw;
+  background-color: rgba(255,255,255,0.75);
+  border-radius: 4rem;
+  width: 95vw;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.options-panel {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 95vw;
+    height: 24vh;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 1rem 1.5rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.options-identity-buttons {
+  display: flex;
+}
+
+.starting-life-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.starting-life-button {
+  border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+
+.color-button {
+  aspect-ratio: 1/1;
+  background-color: transparent;
+  border: none;
+
+  img {
+    width: 100%;
+  }
+}
+
+.identity-icon {
+  position:relative;
+
+  &:after {
+    content: '';
+    background-color: white;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 160px;
+    height: 160px;
+  }
+}
+
+.identity-white {
+  background-image: linear-gradient(to bottom in oklab, oklch(100% 0.02 91) 0%, oklch(100% 0.07 108) 100%);
+}
+
+.identity-blue {
+  background-image: 
+    linear-gradient(
+      to bottom in oklab,
+      oklch(97% 0.03 222) 0%, oklch(91% 0.23 263) 100%
+    )
+  ;
+}
+
+.identity-black {
+  background-image: 
+  linear-gradient(
+    to bottom in oklab,
+    oklch(100% 0.05 8) 0%, oklch(0% 0.15 263) 100%
+  )
+;
+}
+
+.identity-red {
+  background-image: 
+    linear-gradient(
+      to bottom in oklab,
+      oklch(100% 0.16 48) 0%, oklch(59% 0.26 25) 100%
+    )
+  ;
+}
+
+.identity-green {
+  background-image: 
+  linear-gradient(
+    to bottom in oklab,
+    oklch(100% 0.08 165) 0%, oklch(57% 0.17 137) 100%
+  )
+;
+}
