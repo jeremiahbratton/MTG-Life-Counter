@@ -40,11 +40,11 @@ function changeIdentity(color) {
 
 <template>
   <main :class="`counterBody identity-${options.identity}`">
-    <img :src="`/src/assets/img/${options.identity}.svg`" class="identity-icon" width="160" height="160" />
+    <img :src="`/${options.identity}.svg`" class="identity-icon" width="160" height="160" />
     <div class="lifeCounter">
-      <button @click="changeLife(false)" class="roundButton">-</button>
+      <button @click.prevent="changeLife(false)" class="roundButton">-</button>
       <span class="life-total">{{ options.currentLife }}</span>
-      <button @click="changeLife(true)" class="roundButton">+</button>
+      <button @click.prevent="changeLife(true)" class="roundButton">+</button>
     </div>
 
     <button @click="toggleOptionsPanel" class="optionsButton">...</button>
@@ -61,15 +61,15 @@ function changeIdentity(color) {
       <section>
         <h2>Identity</h2>
         <div class="options-identity-buttons">
-          <button @click="changeIdentity('white')" class="color-button"><img src="/src/assets/img/white.svg" width="60"
+          <button @click="changeIdentity('white')" class="color-button"><img src="/white.svg" width="60"
               height="60" /></button>
-          <button @click="changeIdentity('blue')" class="color-button"><img src="/src/assets/img/blue.svg" width="60"
+          <button @click="changeIdentity('blue')" class="color-button"><img src="/blue.svg" width="60"
               height="60" /></button>
-          <button @click="changeIdentity('black')" class="color-button"><img src="/src/assets/img/black.svg" width="60"
+          <button @click="changeIdentity('black')" class="color-button"><img src="/black.svg" width="60"
               height="60" /></button>
-          <button @click="changeIdentity('red')" class="color-button"><img src="/src/assets/img/red.svg" width="60"
+          <button @click="changeIdentity('red')" class="color-button"><img src="/red.svg" width="60"
               height="60" /></button>
-          <button @click="changeIdentity('green')" class="color-button"><img src="/src/assets/img/green.svg" width="60"
+          <button @click="changeIdentity('green')" class="color-button"><img src="/green.svg" width="60"
               height="60" /></button>
         </div>
       </section>
